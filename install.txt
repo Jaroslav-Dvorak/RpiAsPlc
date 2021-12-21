@@ -1,0 +1,27 @@
+wget https://sourceforge.net/projects/snap7/files/1.4.2/snap7-full-1.4.2.7z/download
+sudo apt-get install p7zip-full
+7z x download
+cd snap7-full-1.4.2/build/unix
+sudo make -f arm_v7_linux.mk all
+sudo cp ../bin/arm_v7-linux/libsnap7.so /usr/lib/libsnap7.so
+sudo cp ../bin/arm_v7-linux/libsnap7.so /usr/local/lib/libsnap7.so
+sudo ldconfig
+sudo pip3 install python-snap7
+mkdir /home/pi/.config/autostart
+nano /home/pi/.config/autostart/S7Server.desktop
+
+[Desktop Entry]
+Type=Application
+Name=S7Server
+Exec=lxterminal --working-directory=/home/pi/Py/vizualizace/ -e "sudo python3 S7Server.py"
+
+Preferences --> Raspberry pi Configuration --> interfaces --> remote GPIO --> Enabled
+sudo systemctl enable pigpiod
+sudo systemctl start pigpiod
+pip3 install resettabletimer
+nano /home/pi/.config/autostart/S7Client.desktop
+
+[Desktop Entry]
+Type=Application
+Name=S7Client
+Exec=lxterminal --working-directory=/home/pi/Py/vizualizace/S7Client -e "python3 S7Client.py"
