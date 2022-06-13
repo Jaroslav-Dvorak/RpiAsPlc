@@ -24,4 +24,4 @@ nano /home/pi/.config/autostart/S7Client.desktop
 [Desktop Entry]
 Type=Application
 Name=S7Client
-Exec=lxterminal --working-directory=/home/pi/Py/vizualizace/S7Client -e "python3 S7Client.py"
+Exec=lxterminal --working-directory=/home/pi/Py/RpiAsPlc/S7Client -e "python3 S7Client.py"
