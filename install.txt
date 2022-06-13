@@ -13,7 +13,7 @@ nano /home/pi/.config/autostart/S7Server.desktop
 [Desktop Entry]
 Type=Application
 Name=S7Server
-Exec=lxterminal --working-directory=/home/pi/Py/vizualizace/ -e "sudo python3 S7Server.py"
+Exec=lxterminal --working-directory=/home/pi/Py/RpiAsPlc/ -e "sudo python3 S7Server.py"
 
 Preferences --> Raspberry pi Configuration --> interfaces --> remote GPIO --> Enabled
 sudo systemctl enable pigpiod
