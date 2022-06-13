@@ -25,3 +25,5 @@ nano /home/pi/.config/autostart/S7Client.desktop
 Type=Application
 Name=S7Client
 Exec=lxterminal --working-directory=/home/pi/Py/RpiAsPlc/S7Client -e "python3 S7Client.py"
+
+set rasp_ip variable in S7Client.py to static ip of rpi
